@@ -563,8 +563,12 @@ function clearFilterResult() {
  //   console.log('collect Data',selectedData);
     
    var selectedData = selectData();
+   if (selectedData.resposeData === 'undefined') {
+     myFunction();
+   }
+
    function myFunction() {
-   if (selectedData.lenght > 0 ) {
+   if (selectedData..resposeData !== 'undefined') {
    
      var oc =  $("#chart-container").orgchart({
                 data: selectData(),
