@@ -560,11 +560,16 @@ function clearFilterResult() {
       
  //   console.log('collect Data',selectedData);
      $(document).ready(function() {
-           var oc = $("#chart-container").orgchart({
-            data: selectData(),
-            nodeContent: "title"
-          });
+     $(document).ajaxComplete(function () {
+       var oc = $("#chart-container").orgchart({
+                data: selectData(),
+                nodeContent: "title"
+              });
+         });
+         
      });
+   
+  
   
     
     $("#btn-filter-node").on("click", function() {
