@@ -528,7 +528,7 @@ function clearFilterResult() {
 
 (function($) {
  $(document).ready(function(){ 
-   var ds = {};
+ //  var ds = {};
    var url ="https://www.mocky.io/v2/5e089bf33000005b0081a0ee";
 //     $.getJSON( url +"?callback=?", function( data ){
 //       console.log( data.name ); // Logs "jQuery Howto"
@@ -549,7 +549,7 @@ function clearFilterResult() {
     var oc = $("#chart-container").orgchart({
       data:  $.getJSON( url +"?callback=?", function( data ){
            return data;
-    });
+    }),
       nodeContent: "title"
     });
     $("#btn-filter-node").on("click", function() {
