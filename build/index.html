@@ -556,11 +556,11 @@ function clearFilterResult() {
    });
    return result ;
  }
-    var selectedData = selectData();
+   
       
  //   console.log('collect Data',selectedData);
      $(document).ajaxStop(function () {
-    
+     var selectedData = selectData();
        var oc = $("#chart-container").orgchart({
                 data: selectData(),
                 nodeContent: "title"
