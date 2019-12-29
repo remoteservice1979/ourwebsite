@@ -552,9 +552,9 @@ function clearFilterResult() {
            return data;
     });
         
-  console.log('collect Data',selectedData);
+  console.log('collect Data',selectedData.responseJSON);
     var oc = $("#chart-container").orgchart({
-      data: selectData(),
+      data: selectedData.responseJSON,
       nodeContent: "title"
     });
     $("#btn-filter-node").on("click", function() {
