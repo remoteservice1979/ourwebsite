@@ -544,7 +544,7 @@ function clearFilterResult() {
       dataType: "jsonp",
       async: false,
       cache: false,
-      
+      timeout: 3000,
       success: function(data){
         console.log("Data",data);
       result: data
