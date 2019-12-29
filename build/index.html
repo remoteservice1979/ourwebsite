@@ -568,10 +568,10 @@ function clearFilterResult() {
    }
 
    function myFunction() {
-   if (selectedData.resposeData !== 'undefined') {
+   if (selectedData.toString.length === 0) {
    
      var oc =  $("#chart-container").orgchart({
-                data: selectData(),
+                data: selectedData,
                 nodeContent: "title"
               })
      }
