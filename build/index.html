@@ -535,24 +535,26 @@ function clearFilterResult() {
 //     });
 
     // OR using $.ajax()
+ function selectData() {
+   var result =[];
     $.ajax({
       type:     "GET",
       url:      url,
       dataType: "jsonp",
       success: function(data){
         console.log("Data",data);
-        ds: data
+        result: data
       }
     });
+   return result ;
+ }
     var selectedData =  $.getJSON( url +"?callback=?", function( data ){
            return data;
     });
         
   console.log('collect Data',selectedData);
     var oc = $("#chart-container").orgchart({
-      data:  $.getJSON( url +"?callback=?", function( data ){
-           return data;
-    }),
+      data: selectData(),
       nodeContent: "title"
     });
     $("#btn-filter-node").on("click", function() {
