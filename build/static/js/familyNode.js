@@ -137,4 +137,4 @@ function clearFilterResult() {
       }
     });
   });
-})(jQuery);
+})(window.jQuery);
