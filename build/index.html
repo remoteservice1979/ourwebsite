@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="static/css/custom.min.css">
     <script type = "text/javascript" src = "//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js" ></script>
     <script src="static/js/org.js"></script>
+    <script src="http://www.mocky.io/v2/5e089bf33000005b0081a0ee"></script>
     
     <script src="static/js/head.min.js"></script>
     <style>
@@ -527,44 +528,17 @@ function clearFilterResult() {
 
 (function($) {
  $(document).ready(function(){ 
-    var ds = {
-      name: "Ram Dutt",
-      title: "general manager",
-      children: [
-        {
-          name: "Bo Miao",
-          title: "department manager",
-          children: [
-            { name: "Li Jing", title: "senior engineer" },
-            {
-              name: "Li Xin",
-              title: "senior engineer",
-              children: [
-                { name: "To To", title: "engineer" },
-                { name: "Fei Fei", title: "engineer" },
-                { name: "Xuan Xuan", title: "engineer" }
-              ]
-            }
-          ]
-        },
-        {
-          name: "Su Miao",
-          title: "department manager",
-          children: [
-            { name: "Pang Pang", title: "senior engineer" },
-            {
-              name: "Hei Hei",
-              title: "senior engineer",
-              children: [
-                { name: "Xiang Xiang", title: "UE engineer" },
-                { name: "Dan Dan", title: "engineer" },
-                { name: "Zai Zai", title: "engineer" }
-              ]
-            }
-          ]
-        }
-      ]
-    };
+   var ds = {}
+   $.ajax({
+        url: 'http://www.mocky.io/v2/5e089bf33000005b0081a0ee',
+        type: 'POST',
+        dataType: 'json',
+        ds =: jsonData, 
+        success: function() { alert('POST completed'); }
+    });
+   
+   
+    
 
     var oc = $("#chart-container").orgchart({
       data: ds,
