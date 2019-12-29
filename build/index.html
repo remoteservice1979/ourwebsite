@@ -542,24 +542,24 @@ function clearFilterResult() {
       type:     "GET",
       url:      url,
       dataType: "jsonp",
+      async: false,
+      cache: false,
+      timeout: 3000,
       success: function(data){
         console.log("Data",data);
-       // result: data
-        oc :  $("#chart-container").orgchart({
-          data: data,
-          nodeContent: "title"
-        })
+      result: data
+     
       }
     });
    return result ;
  }
     var selectedData = selectData();
         
-//   console.log('collect Data',selectedData);
-//     var oc = $("#chart-container").orgchart({
-//       data: selectedData,
-//       nodeContent: "title"
-//     });
+    console.log('collect Data',selectedData);
+    var oc = $("#chart-container").orgchart({
+      data: selectedData,
+      nodeContent: "title"
+    });
     $("#btn-filter-node").on("click", function() {
       filterNodes($("#key-word").val());
     });
