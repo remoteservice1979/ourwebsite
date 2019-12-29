@@ -568,7 +568,7 @@ function clearFilterResult() {
    }
 
    function myFunction() {
-   if (selectedData.toString.length === 0) {
+   if (selectedData.toString.length !== 0) {
    
      var oc =  $("#chart-container").orgchart({
                 data: selectedData,
