@@ -559,15 +559,14 @@ function clearFilterResult() {
     var selectedData = selectData();
       
  //   console.log('collect Data',selectedData);
-     $(document).ready(function() {
-     $(document).ajaxComplete(function () {
+     $(document).ajaxComplete(function(){
+    
        var oc = $("#chart-container").orgchart({
                 data: selectData(),
                 nodeContent: "title"
               });
          });
-         
-     });
+     
    
   
   
