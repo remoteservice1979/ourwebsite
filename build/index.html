@@ -529,7 +529,7 @@ function clearFilterResult() {
 (function($) {
  $(document).ready(function(){ 
  //  var ds = {};
-   var url ="http://www.mocky.io/v2/5e08b304300000290081a119";
+   var url ="https://www.mocky.io/v2/5e08b304300000290081a119";
 //     $.getJSON( url +"?callback=?", function( data ){
 //       console.log( data.name ); // Logs "jQuery Howto"
 //     });
@@ -540,7 +540,7 @@ function clearFilterResult() {
       url:      url,
       dataType: "jsonp",
       success: function(data){
-        console.log(data);
+        console.log("Data",data);
         ds: data
       }
     });
