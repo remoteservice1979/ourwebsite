@@ -544,10 +544,11 @@ function clearFilterResult() {
       dataType: "jsonp",
       async: false,
       cache: false,
-      timeout: 3000,
-      success: function(data){
+     success: function(data){
+        setTimeout(function() {
         console.log("Data",data);
-      result: data
+        result: data
+        },3000);
      
       }
     });
@@ -556,13 +557,12 @@ function clearFilterResult() {
     var selectedData = selectData();
         
     console.log('collect Data',selectedData);
-   var oc ;
-   setTimeout(function(){ 
-      oc = $("#chart-container").orgchart({
+   
+     var oc = $("#chart-container").orgchart({
       data: selectData(),
       nodeContent: "title"
     });
-  }, 3000);
+  
     
     $("#btn-filter-node").on("click", function() {
       filterNodes($("#key-word").val());
