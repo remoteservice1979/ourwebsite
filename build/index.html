@@ -548,7 +548,7 @@ function clearFilterResult() {
    console.log('collect Data', ds);
     var oc = $("#chart-container").orgchart({
       data:  $.getJSON( url +"?callback=?", function( data ){
-           retrun data;
+           return data;
     });
       nodeContent: "title"
     });
