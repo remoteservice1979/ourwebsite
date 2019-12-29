@@ -559,7 +559,7 @@ function clearFilterResult() {
     var selectedData = selectData();
       
  //   console.log('collect Data',selectedData);
-     $(document).ajaxComplete(function(){
+     $(document).ajaxStop(function () {
     
        var oc = $("#chart-container").orgchart({
                 data: selectData(),
