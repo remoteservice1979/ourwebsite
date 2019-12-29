@@ -530,12 +530,20 @@ function clearFilterResult() {
  $(document).ready(function(){ 
    var ds = {}
    $.ajax({
-        url: 'https://www.mocky.io/v2/5e089bf33000005b0081a0ee',
-        type: 'POST',
-        dataType: 'json',
-        ds : jsonData, 
-        success: function() { alert('POST completed'); }
-    });
+
+      url : 'https://www.mocky.io/v2/5e089bf33000005b0081a0ee',
+      type : 'GET',
+
+      dataType:'json',
+      success : function(data) {              
+         // alert('Data: '+JSON.stringify(data));
+          ds: data
+      },
+      error : function(request,error)
+      {
+          alert("Request: "+JSON.stringify(request));
+      }
+  });
    
    
     
