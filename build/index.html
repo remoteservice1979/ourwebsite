@@ -552,7 +552,7 @@ function clearFilterResult() {
          result: data,
        
        
-          $("#chart-container").orgchart({
+        oc:  $("#chart-container").orgchart({
                 data: data,
                 nodeContent: "title"
               })
@@ -566,24 +566,24 @@ function clearFilterResult() {
       
  //   console.log('collect Data',selectedData);
     
-   selectedData = selectData();
-   if (selectedData.toString.length === 0) {
-     myFunction();
-   }
+//    selectedData = selectData();
+//    if (selectedData.toString.length === 0) {
+//      myFunction();
+//    }
 
-   function myFunction() {
+//    function myFunction() {
      
-   if (selectedData.toString.length !== 0) {
+//    if (selectedData.toString.length !== 0) {
    
-     var oc =  $("#chart-container").orgchart({
-                data: selectedData,
-                nodeContent: "title"
-              })
-     }
-   else {
-     setTimeout(function(){ myFunction() }, 3000);
-      }
-   }
+//      var oc =  $("#chart-container").orgchart({
+//                 data: selectedData,
+//                 nodeContent: "title"
+//               })
+//      }
+//    else {
+//      setTimeout(function(){ myFunction() }, 3000);
+//       }
+//    }
      
    
   
