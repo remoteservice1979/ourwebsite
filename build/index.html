@@ -544,7 +544,7 @@ function clearFilterResult() {
       dataType: "jsonp",
       async: false,
       cache: false,
-      timeout: 3000,
+      
       success: function(data){
         console.log("Data",data);
       result: data
@@ -556,10 +556,14 @@ function clearFilterResult() {
     var selectedData = selectData();
         
     console.log('collect Data',selectedData);
-    var oc = $("#chart-container").orgchart({
+   var oc ;
+   setTimeout(function(){ 
+      oc = $("#chart-container").orgchart({
       data: selectedData,
       nodeContent: "title"
     });
+  }, 3000);
+    
     $("#btn-filter-node").on("click", function() {
       filterNodes($("#key-word").val());
     });
