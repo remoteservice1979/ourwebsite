@@ -538,6 +538,7 @@ function clearFilterResult() {
  // var oc ;
  function selectData() {
    var result =[];
+   var oc ;
    return new Promise(function(resolve, reject) {
     $.ajax({
       type:     "GET",
@@ -548,7 +549,11 @@ function clearFilterResult() {
      success: function(data){
      
         console.log("Data",data);
-        result: data
+        result: data,
+        oc: $("#chart-container").orgchart({
+                data: selectData(),
+                nodeContent: "title"
+              });
      
      
       }
@@ -559,13 +564,10 @@ function clearFilterResult() {
    
       
  //   console.log('collect Data',selectedData);
-     $(document).ajaxStop(function () {
+    
      var selectedData = selectData();
-       var oc = $("#chart-container").orgchart({
-                data: selectData(),
-                nodeContent: "title"
-              });
-         });
+      // var oc = 
+       
      
    
   
