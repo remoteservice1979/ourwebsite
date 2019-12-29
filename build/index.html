@@ -528,25 +528,23 @@ function clearFilterResult() {
 
 (function($) {
  $(document).ready(function(){ 
-   var ds = {}
-   $.ajax({
+   var ds = {};
+   var url ="https://www.mocky.io/v2/5e089bf33000005b0081a0ee";
+    $.getJSON( url +"?callback=?", function( data ){
+      console.log( data.name ); // Logs "jQuery Howto"
+    });
 
-      url : 'http://www.mocky.io/v2/5e089bf33000005b0081a0ee?callback=data',
-      type : 'GET',
-
-      dataType:'json',
-      success : function(data) {              
-         // alert('Data: '+JSON.stringify(data));
-          ds: data
-      },
-      error : function(request,error)
-      {
-          alert("Request: "+JSON.stringify(request));
+    // OR using $.ajax()
+    $.ajax({
+      type:     "GET",
+      url:      url,
+      dataType: "jsonp",
+      success: function(data){
+        console.log(data);
+        ds: data
       }
-  });
-   
-   
-    
+    });
+     
 
     var oc = $("#chart-container").orgchart({
       data: ds,
