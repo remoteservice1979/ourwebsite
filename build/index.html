@@ -535,7 +535,7 @@ function clearFilterResult() {
 //     });
 
     // OR using $.ajax()
- var oc ;
+ // var oc ;
  function selectData() {
    var result =[];
    return new Promise(function(resolve, reject) {
@@ -546,7 +546,7 @@ function clearFilterResult() {
       async: false,
       cache: false,
      success: function(data){
-       
+     
         console.log("Data",data);
         result: data
      
@@ -557,14 +557,14 @@ function clearFilterResult() {
    return result ;
  }
     var selectedData = selectData();
-        
-    console.log('collect Data',selectedData);
-    setTimeout(function() {
+      
+ //   console.log('collect Data',selectedData);
+     $(document).ready(function() {
            var oc = $("#chart-container").orgchart({
             data: selectData(),
             nodeContent: "title"
           });
-        },5000);
+     });
   
     
     $("#btn-filter-node").on("click", function() {
@@ -612,7 +612,8 @@ function clearFilterResult() {
               <li><a class="js-link js-anchor is-selected" href="#home">Home</a></li>
               <li><a class="js-link js-anchor" href="#about">About Our </a></li>
               <li><a class="js-link js-anchor" href="#services">Hirmanju Pooja</a></li>
-              <li><a class="js-link js-anchor" href="#process">Current Process</a></li>
+              <li><a class="js-link js-anchor" href="#process">Current Pr
+                ess</a></li>
               <li><a class="js-link js-anchor" href="#projects">Projects for future</a></li>
               <li><a class="js-link js-anchor" href="#testimonials">Testimonials of Family Member</a></li>
               <li><a class="js-link js-anchor" href="#team">Our Family</a></li>
