@@ -548,9 +548,7 @@ function clearFilterResult() {
     });
    return result ;
  }
-    var selectedData =  $.getJSON( url +"?callback=?", function( data ){
-           return data;
-    });
+    var selectedData = selectData();
         
   console.log('collect Data',selectedData);
     var oc = $("#chart-container").orgchart({
