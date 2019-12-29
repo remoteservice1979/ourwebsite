@@ -547,8 +547,7 @@ function clearFilterResult() {
       async: false,
       cache: false,
      success: function(data){
-       if(data.length == 0 )
-         setTimeout(selectData, 500);
+      
          console.log("Data",data);
          result: data
     
@@ -564,12 +563,18 @@ function clearFilterResult() {
  //   console.log('collect Data',selectedData);
     
    var selectedData = selectData();
+   function myFunction() {
+   if (selectedData.lenght > 0 ) {
    
      var oc =  $("#chart-container").orgchart({
                 data: selectData(),
                 nodeContent: "title"
               })
-       
+     }
+   else {
+     setTimeout(function(){ myFunction }, 3000);
+      }
+   }
      
    
   
