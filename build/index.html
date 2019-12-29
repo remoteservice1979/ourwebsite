@@ -536,6 +536,7 @@ function clearFilterResult() {
 
     // OR using $.ajax()
  // var oc ;
+   var selectedData = {};
  function selectData() {
    var result =[];
    var oc ;
@@ -549,8 +550,8 @@ function clearFilterResult() {
      success: function(data){
       
          console.log("Data",data);
-         result: data
-    
+         result: data,
+         selectedData : data
      
      
       }
@@ -562,13 +563,13 @@ function clearFilterResult() {
       
  //   console.log('collect Data',selectedData);
     
-   var selectedData = selectData();
+   selectedData = selectData();
    if (selectedData.toString.length === 0) {
      myFunction();
    }
 
    function myFunction() {
-     selectedData = selectData();
+     
    if (selectedData.toString.length !== 0) {
    
      var oc =  $("#chart-container").orgchart({
