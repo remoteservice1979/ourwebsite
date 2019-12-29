@@ -559,7 +559,7 @@ function clearFilterResult() {
    var oc ;
    setTimeout(function(){ 
       oc = $("#chart-container").orgchart({
-      data: selectedData,
+      data: selectData(),
       nodeContent: "title"
     });
   }, 3000);
