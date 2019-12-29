@@ -535,6 +535,7 @@ function clearFilterResult() {
 //     });
 
     // OR using $.ajax()
+ var oc ;
  function selectData() {
    var result =[];
     $.ajax({
@@ -543,18 +544,22 @@ function clearFilterResult() {
       dataType: "jsonp",
       success: function(data){
         console.log("Data",data);
-        result: data
+       // result: data
+        oc :  $("#chart-container").orgchart({
+          data: data,
+          nodeContent: "title"
+        })
       }
     });
    return result ;
  }
     var selectedData = selectData();
         
-  console.log('collect Data',selectedData);
-    var oc = $("#chart-container").orgchart({
-      data: selectedData,
-      nodeContent: "title"
-    });
+//   console.log('collect Data',selectedData);
+//     var oc = $("#chart-container").orgchart({
+//       data: selectedData,
+//       nodeContent: "title"
+//     });
     $("#btn-filter-node").on("click", function() {
       filterNodes($("#key-word").val());
     });
