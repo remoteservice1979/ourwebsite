@@ -530,9 +530,9 @@ function clearFilterResult() {
  $(document).ready(function(){ 
    var ds = {};
    var url ="https://www.mocky.io/v2/5e089bf33000005b0081a0ee";
-    $.getJSON( url +"?callback=?", function( data ){
-      console.log( data.name ); // Logs "jQuery Howto"
-    });
+//     $.getJSON( url +"?callback=?", function( data ){
+//       console.log( data.name ); // Logs "jQuery Howto"
+//     });
 
     // OR using $.ajax()
     $.ajax({
@@ -547,7 +547,9 @@ function clearFilterResult() {
      
    console.log('collect Data', ds);
     var oc = $("#chart-container").orgchart({
-      data: ds,
+      data:  $.getJSON( url +"?callback=?", function( data ){
+           retrun data;
+    });
       nodeContent: "title"
     });
     $("#btn-filter-node").on("click", function() {
