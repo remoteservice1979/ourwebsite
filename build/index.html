@@ -547,9 +547,10 @@ function clearFilterResult() {
       async: false,
       cache: false,
      success: function(data){
-     
-        console.log("Data",data);
-        result: data
+       if(data.length == 0 )
+         setTimeout(selectData, 500);
+         console.log("Data",data);
+         result: data
     
      
      
@@ -562,7 +563,12 @@ function clearFilterResult() {
       
  //   console.log('collect Data',selectedData);
     
- 
+   var selectedData = selectData();
+   
+     var oc =  $("#chart-container").orgchart({
+                data: selectData(),
+                nodeContent: "title"
+              })
        
      
    
@@ -587,11 +593,7 @@ function clearFilterResult() {
   });
 })(window.jQuery);
 
-        var selectedData = selectData();
-     var oc =  $("#chart-container").orgchart({
-                data: selectData(),
-                nodeContent: "title"
-              })
+      
     
     
      </script>
