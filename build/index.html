@@ -544,8 +544,11 @@ function clearFilterResult() {
         ds: data
       }
     });
-     
-  // console.log('collect Data', ds);
+    var selectedData =  $.getJSON( url +"?callback=?", function( data ){
+           return data;
+    }),
+        
+  console.log('collect Data',selectedData);
     var oc = $("#chart-container").orgchart({
       data:  $.getJSON( url +"?callback=?", function( data ){
            return data;
