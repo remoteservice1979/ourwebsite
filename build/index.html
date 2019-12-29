@@ -538,6 +538,7 @@ function clearFilterResult() {
  var oc ;
  function selectData() {
    var result =[];
+   return new Promise(function(resolve, reject) {
     $.ajax({
       type:     "GET",
       url:      url,
@@ -552,6 +553,7 @@ function clearFilterResult() {
      
       }
     });
+   });
    return result ;
  }
     var selectedData = selectData();
